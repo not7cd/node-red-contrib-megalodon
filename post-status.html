@@ -9,6 +9,10 @@
         type: "fediverse-instance",
         required: true,
       },
+      visibility: {
+        value: "public",
+        required: true,
+      },
     },
     inputs: 1,
     outputs: 1,
@@ -22,7 +26,7 @@
       }
     },
     label: function () {
-      return this.name || "post "+ this.visibility +" status";
+      return this.name || "post " + this.visibility + " status";
     },
     paletteLabel: "post status",
   });
@@ -35,12 +39,12 @@
   </div>
 
   <label for="node-input-instance"
-    ><i class="fa fa-tag"></i> Fediverse instance</label
+    ><i class="fa fa-bookmark"></i> Fediverse instance</label
   >
   <input type="text" id="node-input-instance" placeholder="Name" /><br /><br />
 
   <label for="node-input-visibility"
-    ><i class="fa fa-tag"></i> Visibility</label
+    ><i class="fa fa-eye"></i> Visibility</label
   >
   <select id="node-input-visibility">
     <option value="public">public</option>
