@@ -1,15 +1,7 @@
 <script type="text/javascript">
-    function flavourIcon(flavour) {
-        switch(flavour) {
-            case "mastodon":
-                return "mastodon.png";
-            default:
-                return "fediverse.svg";
-        }
-    }
     RED.nodes.registerType('post-status',{
         category: 'social',
-        color: '#a6bbcf',
+        color: "#FFD700",
         defaults: {
             name: {value:""},
             instance: {
@@ -21,11 +13,18 @@
         inputs: 1,
         outputs: 1,
         icon: function() {
-            return "post-status.svg";
+            // TODO: move to a common place
+            switch(this.instance.kind) {
+                case "mastodon":
+                    return "mastodon.png";
+                default:
+                    return "fediverse.svg";
+            }
         },
         label: function() {
             return this.name||"post status";
-        }
+        },
+        paletteLabel: "post status",
     });
 </script>
 
