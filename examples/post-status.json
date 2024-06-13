@@ -1,0 +1,74 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "example: Post Status",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "80a39054f0cd3901",
+        "type": "post-status",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "instance": "875fa6c4068afbbd",
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "e43604e1efcd4f2a"
+            ]
+        ]
+    },
+    {
+        "id": "6242345b646c1a51",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "80a39054f0cd3901"
+            ]
+        ]
+    },
+    {
+        "id": "e43604e1efcd4f2a",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "875fa6c4068afbbd",
+        "type": "fediverse-instance",
+        "apiurl": "https://mastodon.social/api/v1/",
+        "kind": "mastodon"
+    }
+]

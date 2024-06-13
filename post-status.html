@@ -1,7 +1,7 @@
 <script type="text/javascript">
   RED.nodes.registerType("post-status", {
     category: "social",
-    color: "#FFD700",
+    color: "#858AFA",
     defaults: {
       name: { value: "" },
       instance: {
@@ -22,7 +22,7 @@
       }
     },
     label: function () {
-      return this.name || "post status";
+      return this.name || "post "+ this.visibility +" status";
     },
     paletteLabel: "post status",
   });

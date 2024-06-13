@@ -21,13 +21,19 @@ module.exports = function (RED) {
           }
           msg.payload = res.data
           node.send(msg)
-        })
-        .then(function () {
-          node.status({ fill: 'green', shape: 'dot', text: 'posted' })
+          node.status({
+            fill: 'green',
+            shape: 'dot',
+            text: 'posted on ' + msg.payload.created_at
+          })
         })
         .catch(function (error) {
           console.error(error)
-          node.status({ fill: 'red', shape: 'dot', text: error.message })
+          node.status({
+            fill: 'red',
+            shape: 'dot',
+            text: error.response.data.error || error.message
+          })
         })
     })
   }
