@@ -1,0 +1,33 @@
+{
+  "name": "@not7cd/node-red-contrib-megalodon",
+  "version": "0.0.1",
+  "description": "Node-RED wrapper around Megalodon. The library that allows for interfacing with Mastodon, Pleroma, Friendica, and Firefish servers.",
+  "node-red" : {
+    "nodes": {
+        "lower-case": "lower-case.js"
+    }
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "local-node-red": "docker run -it --rm -p 1880:1880 -v ./node_red_data:/data -v .:/node-red-contrib-megalodon:ro --name node-red-contrib-megalodon nodered/node-red"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/not7cd/node-red-contrib-megalodon.git"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/not7cd/node-red-contrib-megalodon/issues"
+  },
+  "homepage": "https://github.com/not7cd/node-red-contrib-megalodon#readme",
+  "dependencies": {
+    "megalodon": "^10.0.1"
+  }
+}
