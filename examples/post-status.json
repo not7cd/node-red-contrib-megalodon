@@ -1,29 +1,30 @@
 [
     {
-        "id": "f6f2187d.f17ca8",
+        "id": "b476eec84967cc1d",
         "type": "tab",
         "label": "example: Post Status",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "80a39054f0cd3901",
+        "id": "7ede457452d2aa21",
         "type": "post-status",
-        "z": "f6f2187d.f17ca8",
+        "z": "b476eec84967cc1d",
         "name": "",
-        "instance": "875fa6c4068afbbd",
-        "x": 470,
-        "y": 240,
+        "instance": "7b4e400eed228fac",
+        "visibility": "unlisted",
+        "x": 310,
+        "y": 100,
         "wires": [
             [
-                "e43604e1efcd4f2a"
+                "f3cb83733a2f125e"
             ]
         ]
     },
     {
-        "id": "6242345b646c1a51",
+        "id": "f6ebb91f2a0385a2",
         "type": "inject",
-        "z": "f6f2187d.f17ca8",
+        "z": "b476eec84967cc1d",
         "name": "",
         "props": [
             {
@@ -41,34 +42,54 @@
         "topic": "",
         "payload": "Hello World",
         "payloadType": "str",
-        "x": 290,
-        "y": 240,
+        "x": 150,
+        "y": 60,
         "wires": [
             [
-                "80a39054f0cd3901"
+                "b31caac4c51dc96b"
             ]
         ]
     },
     {
-        "id": "e43604e1efcd4f2a",
+        "id": "f3cb83733a2f125e",
         "type": "debug",
-        "z": "f6f2187d.f17ca8",
-        "name": "debug 1",
+        "z": "b476eec84967cc1d",
+        "name": "response",
         "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 240,
+        "x": 140,
+        "y": 140,
         "wires": []
     },
     {
-        "id": "875fa6c4068afbbd",
+        "id": "b31caac4c51dc96b",
+        "type": "template",
+        "z": "b476eec84967cc1d",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "✨ {{payload}} ✨",
+        "output": "str",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "7ede457452d2aa21"
+            ]
+        ]
+    },
+    {
+        "id": "7b4e400eed228fac",
         "type": "fediverse-instance",
-        "apiurl": "https://mastodon.social/api/v1/",
+        "apiurl": "https://mastodon.social",
         "kind": "mastodon"
     }
 ]
