@@ -1,48 +1,59 @@
 <script type="text/javascript">
-    RED.nodes.registerType('fediverse-instance',{
-        category: 'config',
-        credentials: {
-            accesstoken: {
-                type: "password"
-            }
-        },
-        defaults: {
-            apiurl: {
-                value: "https://mastodon.social/api/v1/",
-                required: true,
-            },
-            kind: {
-                value: "mastodon",
-                required: true,
-            },
-        },
-        icon: "mastodon.png",
-        label: function() {
-            return this.kind + " @" + this.apiurl;
-        },
-        paletteLabel: "Fediverse Instance",
-    });
+  RED.nodes.registerType("fediverse-instance", {
+    category: "config",
+    credentials: {
+      accesstoken: {
+        type: "password",
+      },
+    },
+    defaults: {
+      apiurl: {
+        value: "https://mastodon.social",
+        required: true,
+      },
+      kind: {
+        value: "mastodon",
+        required: true,
+      },
+    },
+    icon: "mastodon.png",
+    label: function () {
+      return this.kind + " @" + this.apiurl;
+    },
+    paletteLabel: "Fediverse Instance",
+  });
 </script>
 
 <script type="text/html" data-template-name="fediverse-instance">
-    <div class="form-row">
-        <label for="node-config-input-kind"><i class="fa fa-tag"></i> Kind</label>
-        <select id="node-config-input-kind" name="instance-kind">
-            <option value="mastodon">Mastodon</option>
-            <option value="saab">Saab</option>
-            <option value="fiat">Fiat</option>
-            <option value="audi">Audi</option>
-          </select><br /><br />
+  <div class="form-row">
+    <label for="node-config-input-kind"><i class="fa fa-tag"></i> Kind</label>
+    <select id="node-config-input-kind" name="instance-kind">
+      <option value="mastodon">Mastodon</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option></select
+    ><br /><br />
 
-        <label for="node-config-input-apiurl"><i class="fa fa-tag"></i> API URL</label>
-        <input type="text" id="node-config-input-apiurl" placeholder="https://mastodon.social/api/v1/"><br /><br />
+    <label for="node-config-input-apiurl"
+      ><i class="fa fa-tag"></i> API URL</label
+    >
+    <input
+      type="text"
+      id="node-config-input-apiurl"
+      placeholder="https://mastodon.social"
+    /><br /><br />
 
-        <label for="node-config-input-accesstoken"><i class="fa fa-tag"></i> Access Token</label>
-        <input type="password" id="node-config-input-accesstoken" placeholder="Access Token"><br /><br />
-
-    </div>
+    <label for="node-config-input-accesstoken"
+      ><i class="fa fa-tag"></i> Access Token</label
+    >
+    <input
+      type="password"
+      id="node-config-input-accesstoken"
+      placeholder="Access Token"
+    /><br /><br />
+  </div>
 </script>
 
 <script type="text/html" data-help-name="fediverse-instance">
-    <p>Mastodon server configuration.</p>
+  <p>Mastodon server configuration.</p>
 </script>
