@@ -2,18 +2,18 @@
   "name": "@not7cd/node-red-contrib-megalodon",
   "version": "0.0.1",
   "description": "Node-RED wrapper around Megalodon. The library that allows for interfacing with Mastodon, Pleroma, Friendica, and Firefish servers.",
-  "node-red" : {
+  "node-red": {
     "nodes": {
-        "post-status": "post-status.js",
-        "fediverse-instance": "fediverse-instance.js",
-        "get": "get.js"
+      "post-status": "post-status.js",
+      "fediverse-instance": "fediverse-instance.js",
+      "get": "get.js"
     }
   },
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha \"test/**/*_spec.js\"",
     "local-node-red": "./tools/docker.sh"
   },
   "repository": {
@@ -31,5 +31,9 @@
   "homepage": "https://github.com/not7cd/node-red-contrib-megalodon#readme",
   "dependencies": {
     "megalodon": "^10.0.1"
+  },
+  "devDependencies": {
+    "node-red": "^3.1.10",
+    "node-red-node-test-helper": "^0.3.4"
   }
 }
