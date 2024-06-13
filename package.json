@@ -5,7 +5,8 @@
   "node-red" : {
     "nodes": {
         "post-status": "post-status.js",
-        "fediverse-instance": "fediverse-instance.js"
+        "fediverse-instance": "fediverse-instance.js",
+        "get": "get.js"
     }
   },
   "directories": {
