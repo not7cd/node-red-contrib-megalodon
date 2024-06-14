@@ -5,7 +5,7 @@ module.exports = function (RED) {
     this.instance = RED.nodes.getNode(config.instance)
     var client = this.instance.client
     client
-      .publicStreaming()
+      .userStreaming()
       .then(stream => {
         stream.on('connect', () => {
           node.status({ fill: 'green', shape: 'dot', text: 'connected' })
@@ -26,7 +26,8 @@ module.exports = function (RED) {
         })
 
         stream.on('error', err => {
-          console.log(err)
+          node.error(err)
+          node.status({ fill: 'red', shape: 'dot', text: err.message })
         })
 
         stream.on('heartbeat', () => {

@@ -7,7 +7,7 @@ module.exports = function (RED) {
     this.access_token = this.credentials.accesstoken
     
     var megalodon = require('megalodon')
-    this.client = megalodon.default(this.kind, this.api_url, this.access_token)
+    this.client = megalodon.default(this.kind, this.api_url, this.access_token.trim())
     console.log('Instance client created, API URL: ' + this.api_url)
   }
   RED.nodes.registerType('fediverse-instance', InstanceClient, {
