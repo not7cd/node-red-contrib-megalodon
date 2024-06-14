@@ -12,16 +12,7 @@
     },
     inputs: 1,
     outputs: 1,
-    icon: function () {
-      // TODO: move to a common place
-      if (!this.instance) return "fediverse.svg";
-      switch (this.instance.kind) {
-        case "mastodon":
-          return "mastodon.png";
-        default:
-          return "fediverse.svg";
-      }
-    },
+    icon: "fediverse.svg",
     label: function () {
       return this.name || "lookup account";
     },
