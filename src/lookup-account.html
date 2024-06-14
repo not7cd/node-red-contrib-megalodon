@@ -1,0 +1,58 @@
+<script type="text/javascript">
+  RED.nodes.registerType("lookup-account", {
+    category: "social",
+    color: "#858AFA",
+    defaults: {
+      name: { value: "" },
+      instance: {
+        value: "",
+        type: "fediverse-instance",
+        required: true,
+      },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: function () {
+      // TODO: move to a common place
+      switch (this.instance.kind) {
+        case "mastodon":
+          return "mastodon.png";
+        default:
+          return "fediverse.svg";
+      }
+    },
+    label: function () {
+      return this.name || "lookup account";
+    },
+    paletteLabel: "lookup-account",
+  });
+</script>
+
+<script type="text/html" data-template-name="lookup-account">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
+
+  <label for="node-input-instance">
+    <i class="fa fa-bookmark"></i> Fediverse instance
+  </label>
+  <input type="text" id="node-input-instance" placeholder="Name" /><br /><br />
+
+  <label for="node-input-visibility">
+    <i class="fa fa-tag"></i> Visibility</label
+  >
+  <select id="node-input-visibility">
+    <option value="public">public</option>
+    <option value="private">private</option>
+    <option value="unlisted">unlisted</option>
+    <option value="direct">direct</option></select
+  ><br /><br />
+</script>
+
+<script type="text/html" data-help-name="lookup-account">
+  <p>
+    A simple node that converts the message payloads into all lower-case
+    characters
+  </p>
+</script>
