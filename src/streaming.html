@@ -1,0 +1,62 @@
+<script type="text/javascript">
+  RED.nodes.registerType("streaming", {
+    category: "social",
+    color: "#858AFA",
+    defaults: {
+      name: { value: "" },
+      instance: {
+        value: "",
+        type: "fediverse-instance",
+        required: true,
+      },
+      feed: {
+        value: "user",
+        required: true,
+      },
+    },
+    inputs: 0,
+    outputs: 1,
+    icon: "fediverse.svg",
+    label: function () {
+      return this.name || this.feed + " feed";
+    },
+    paletteLabel: "stream updates",
+    oneditprepare: function () {
+      $("#node-input-feed").typedInput({
+        types: [
+          {
+            value: "feed",
+            options: [
+              { value: "user", label: "User feed" },
+              { value: "local", label: "Local feed" },
+              { value: "public", label: "Public feed" },
+              { value: "tag", label: "Tag feed" },
+            ],
+          },
+        ],
+      });
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="streaming">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name" />
+  </div>
+
+  <label for="node-input-instance">
+    <i class="fa fa-globe"></i> Fediverse instance
+  </label>
+  <input type="text" id="node-input-instance" placeholder="Name" /><br /><br />
+
+  <input type="text" id="node-input-feed" /><br /><br />
+  <br /><br />
+</script>
+
+<script type="text/html" data-help-name="streaming">
+  <p>
+    A simple node that converts the message payloads into all lower-case
+    characters
+  </p>
+</script>
