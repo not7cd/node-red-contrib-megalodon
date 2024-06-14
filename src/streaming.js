@@ -3,9 +3,24 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, config)
     var node = this
     this.instance = RED.nodes.getNode(config.instance)
+    var feed = config.feed
     var client = this.instance.client
+    switch (feed) {
+      case 'user':
+        client = client.userStreaming()
+        break
+      case 'public':
+        client = client.publicStreaming()
+        break
+      case 'local':
+        client = client.localStreaming()
+        break
+      // TODO: Add a case for 'tag'
+      default:
+        node.error("no feed selected")
+        return
+    }
     client
-      .userStreaming()
       .then(stream => {
         stream.on('connect', () => {
           node.status({ fill: 'green', shape: 'dot', text: 'connected' })
