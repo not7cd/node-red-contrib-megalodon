@@ -1,5 +1,5 @@
 var helper = require('node-red-node-test-helper')
-var postNode = require('../post-status.js')
+var postNode = require('./post-status.js')
 
 describe('post-status Node', function () {
   afterEach(function () {

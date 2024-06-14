@@ -29,6 +29,21 @@
       return this.name || "post " + this.visibility + " status";
     },
     paletteLabel: "post status",
+    oneditprepare: function () {
+      $("#node-input-visibility").typedInput({
+        types: [
+          {
+            value: "visibility",
+            options: [
+              { value: "public", label: "Public" },
+              { value: "private", label: "Private" },
+              { value: "unlisted", label: "Unlisted" },
+              { value: "direct", label: "Direct" },
+            ],
+          },
+        ],
+      });
+    },
   });
 </script>
 
@@ -46,12 +61,7 @@
   <label for="node-input-visibility"
     ><i class="fa fa-eye"></i> Visibility</label
   >
-  <select id="node-input-visibility">
-    <option value="public">public</option>
-    <option value="private">private</option>
-    <option value="unlisted">unlisted</option>
-    <option value="direct">direct</option></select
-  ><br /><br />
+  <input type="text" id="node-input-visibility" /><br /><br />
 
   <label for="node-input-recipients" hidden="hidden"
     ><i class="fa fa-tag"></i> Recipient</label

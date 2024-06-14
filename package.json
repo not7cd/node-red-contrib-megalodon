@@ -4,16 +4,16 @@
   "description": "Node-RED wrapper around Megalodon. The library that allows for interfacing with Mastodon, Pleroma, Friendica, and Firefish servers.",
   "node-red": {
     "nodes": {
-      "post-status": "post-status.js",
-      "fediverse-instance": "fediverse-instance.js",
-      "get": "get.js"
+      "post-status": "src/post-status.js",
+      "fediverse-instance": "src/fediverse-instance.js",
+      "get": "src/get.js"
     }
   },
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "mocha \"test/**/*.spec.js\"",
+    "test": "mocha \"src/**/*.spec.js\"",
     "local-node-red": "./tools/docker.sh"
   },
   "repository": {
