@@ -5,11 +5,7 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, config)
     var node = this
     this.instance = RED.nodes.getNode(config.instance)
-    var client = megalodon.default(
-      'mastodon',
-      this.instance.api_url,
-      this.instance.access_token
-    )
+    var client = this.instance.client
     node.on('input', function (msg) {
       var post = msg.payload
       client
