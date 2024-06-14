@@ -1,5 +1,3 @@
-var megalodon = require('megalodon')
-
 module.exports = function (RED) {
   function GetNode (config) {
     RED.nodes.createNode(this, config)

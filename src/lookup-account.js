@@ -1,5 +1,3 @@
-var megalodon = require('megalodon')
-
 module.exports = function (RED) {
   function LookupAccountNode (config) {
     RED.nodes.createNode(this, config)
@@ -7,9 +5,9 @@ module.exports = function (RED) {
     this.instance = RED.nodes.getNode(config.instance)
     var client = this.instance.client
     node.on('input', function (msg) {
-      var post = msg.payload
+      var finger = msg.payload
       client
-        .lookupAccount(post)
+        .lookupAccount(finger)
         .then(function (res) {
           console.log(res.data)
           if (res.data.error) {
