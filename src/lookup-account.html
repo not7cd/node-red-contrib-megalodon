@@ -14,6 +14,7 @@
     outputs: 1,
     icon: function () {
       // TODO: move to a common place
+      if (!this.instance) return "fediverse.svg";
       switch (this.instance.kind) {
         case "mastodon":
           return "mastodon.png";
@@ -39,15 +40,6 @@
   </label>
   <input type="text" id="node-input-instance" placeholder="Name" /><br /><br />
 
-  <label for="node-input-visibility">
-    <i class="fa fa-tag"></i> Visibility</label
-  >
-  <select id="node-input-visibility">
-    <option value="public">public</option>
-    <option value="private">private</option>
-    <option value="unlisted">unlisted</option>
-    <option value="direct">direct</option></select
-  ><br /><br />
 </script>
 
 <script type="text/html" data-help-name="lookup-account">

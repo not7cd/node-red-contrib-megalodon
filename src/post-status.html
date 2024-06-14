@@ -18,6 +18,7 @@
     outputs: 1,
     icon: function () {
       // TODO: move to a common place
+      if (!this.instance) return "fediverse.svg";
       switch (this.instance.kind) {
         case "mastodon":
           return "mastodon.png";
