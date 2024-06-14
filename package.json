@@ -7,7 +7,7 @@
       "post-status": "src/post-status.js",
       "fediverse-instance": "src/fediverse-instance.js",
       "get": "src/get.js",
-      "lookup-accounts": "src/lookup-accounts.js"
+      "lookup-account": "src/lookup-account.js"
     }
   },
   "directories": {
